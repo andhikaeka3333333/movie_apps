@@ -6,7 +6,7 @@ class MovieController extends GetxController {
   final dataMovie = <ModelMovie>[
     ModelMovie(
         "Deadpool Wolverine",
-        "6.4/10 IMDb",
+        "8.0/10 IMDb",
         "ACTION",
         "2h 8m",
         "images/deadpool.jpg",
@@ -14,7 +14,7 @@ class MovieController extends GetxController {
         ""),
     ModelMovie(
         "Border Lands",
-        "6.4/10 IMDb",
+        "4.5/10 IMDb",
         "ACTION",
         "1h 41m",
         "images/borderlands.jpg",
@@ -22,7 +22,7 @@ class MovieController extends GetxController {
         ""),
     ModelMovie(
         "Inside Out 2",
-        "6.4/10 IMDb",
+        "7.7/10 IMDb",
         "ANIMATION",
         "1h 47m",
         "images/insideout.jpg",
@@ -30,7 +30,7 @@ class MovieController extends GetxController {
         ""),
     ModelMovie(
         "Rebel Ridge",
-        "6.4/10 IMDb",
+        "6.9/10 IMDb",
         "ACTION",
         "1h 37m",
         "images/rebelridge.jpg",
@@ -38,7 +38,7 @@ class MovieController extends GetxController {
         ""),
     ModelMovie(
         "Despicable Me 4",
-        "6.4/10 IMDb",
+        "6.2/10 IMDb",
         "ANIMATION",
         "1h 34m",
         "images/despicableme4.jpg",
