@@ -82,6 +82,11 @@ flutter:
     - images/alien.jpg
     - images/itendwithus.jpg
     - images/transformer.jpg
+    - images/highforces.jpg
+    - images/joker.jpg
+    - images/laura.jpg
+    - images/megalopolis.jpg
+    - images/sumala.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
