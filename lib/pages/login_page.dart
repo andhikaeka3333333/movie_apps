@@ -86,10 +86,9 @@ class LoginPage extends StatelessWidget {
                       passwordController.text.toString() == "admin") {
                     Get.offNamed('/dashboard');
                   } else {
-                    const snackBar = SnackBar(
-                      content: Text('Username atau Password salah!'),
-                    );
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    Get.snackbar(
+                        "WARNING", "Username or password is incorrect !",
+                        icon: Icon(Icons.warning));
                   }
                 },
               ),
