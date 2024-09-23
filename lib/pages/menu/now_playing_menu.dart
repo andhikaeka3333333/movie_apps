@@ -12,7 +12,7 @@ class NowPlayingMenu extends StatelessWidget {
     List<ModelMovie> dataMovie = [
       ModelMovie(
           "Speak No Evil",
-          "6.4/10 IMDb",
+          "7.2/10 IMDb",
           "THRILLER",
           "1h 47m",
           "images/speaknoevil.jpg",
@@ -20,7 +20,7 @@ class NowPlayingMenu extends StatelessWidget {
           ""),
       ModelMovie(
           "Harold And The Purple Crayon",
-          "6.4/10 IMDb",
+          "5.7/10 IMDb",
           "ADVENTURE",
           "1h 47m",
           "images/harold.jpg",
@@ -28,7 +28,7 @@ class NowPlayingMenu extends StatelessWidget {
           ""),
       ModelMovie(
           "Cinderella's Curse",
-          "6.4/10 IMDb",
+          "3.3/10 IMDb",
           "HORROR",
           "1h 47m",
           "images/cinderellacurse.jpg",
@@ -36,7 +36,7 @@ class NowPlayingMenu extends StatelessWidget {
           ""),
       ModelMovie(
           "The Wild Robot",
-          "6.4/10 IMDb",
+          "8.2/10 IMDb",
           "ANIMATION",
           "1h 47m",
           "images/wildrobot.jpg",
@@ -46,32 +46,24 @@ class NowPlayingMenu extends StatelessWidget {
 
     List<ModelMovie> dataMovieHorizontal = [
       ModelMovie(
-          "The Goon",
-          "6.4/10 IMDb",
-          "ACTION",
-          "1h 47m",
-          "images/thegoon.jpg",
-          "Soulmates Eric and Shelly are brutally murdered when the demons of her dark past catch up with them. Given the chance to save his true love by sacrificing himself, Eric sets out to seek merciless revenge on their killers, traversing the worlds of the living and the dead to put the wrong things right.",
-          "images/thegoonbanner.webp"),
-      ModelMovie(
-          "Bettlejuice Bettlejuice",
-          "6.4/10 IMDb",
-          "HORROR COMEDY",
-          "1h 47m",
-          "images/bettlejuice.jpg",
-          "After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.",
-          "images/bettlejuicebanner.webp"),
-      ModelMovie(
           "Alien Romulus",
-          "6.4/10 IMDb",
+          "7.4/10 IMDb",
           "ACTION",
           "1h 47m",
           "images/alien.jpg",
           "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.",
           "images/alienromulusbanner.webp"),
       ModelMovie(
+          "Bettlejuice Bettlejuice",
+          "7.0/10 IMDb",
+          "HORROR COMEDY",
+          "1h 47m",
+          "images/bettlejuice.jpg",
+          "After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.",
+          "images/bettlejuicebanner.webp"),
+      ModelMovie(
           "It End With Us",
-          "6.4/10 IMDb",
+          "6.7/10 IMDb",
           "ROMANS",
           "1h 47m",
           "images/itendwithus.jpg",
@@ -79,12 +71,20 @@ class NowPlayingMenu extends StatelessWidget {
           "images/itendwithusbanner.webp"),
       ModelMovie(
           "Transformer One",
-          "6.4/10 IMDb",
+          "7.9/10 IMDb",
           "ACTION",
           "1h 47m",
           "images/transformer.jpg",
           "The untold origin story of Optimus Prime and Megatron, better known as sworn enemies, but once were friends bonded like brothers who changed the fate of Cybertron forever.",
           "images/trans.webp"),
+      ModelMovie(
+          "The Goon",
+          "4.7/10 IMDb",
+          "ACTION",
+          "1h 47m",
+          "images/thegoon.jpg",
+          "Soulmates Eric and Shelly are brutally murdered when the demons of her dark past catch up with them. Given the chance to save his true love by sacrificing himself, Eric sets out to seek merciless revenge on their killers, traversing the worlds of the living and the dead to put the wrong things right.",
+          "images/thegoonbanner.webp"),
     ];
 
     return Scaffold(
