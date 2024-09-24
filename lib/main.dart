@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/',
           page: () => LoginPage(),
+          binding: MyBindings()
         ),
         GetPage(
           name: '/dashboard',

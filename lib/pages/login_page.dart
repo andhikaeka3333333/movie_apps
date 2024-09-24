@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controller/login_controller.dart';
 import '../widgets/colors.dart';
 import '../widgets/main_button.dart';
 import '../widgets/my_text_field.dart';
@@ -10,8 +11,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final usernameController = TextEditingController();
-    final passwordController = TextEditingController();
+    final LoginController loginController = Get.find();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -49,23 +49,27 @@ class LoginPage extends StatelessWidget {
               marginTop: 100,
               marginLeft: 60,
               marginRight: 60,
-              controller: usernameController,
               enabledBorderColor: secondaryColor,
               focusedBorderColor: primaryColor,
               labelColor: blackColor,
               labelText: 'Username',
               obscureText: false,
+              onChanged: (String value) {
+                loginController.username.value = value;
+              },
             ),
             MyTextField(
               marginTop: 20,
               marginLeft: 60,
               marginRight: 60,
-              controller: passwordController,
               enabledBorderColor: secondaryColor,
               focusedBorderColor: primaryColor,
               labelColor: blackColor,
               labelText: 'Password',
               obscureText: true,
+              onChanged: (String value) {
+                loginController.password.value = value;
+              },
             ),
             Container(
               margin: EdgeInsets.only(top: 70),
@@ -82,14 +86,7 @@ class LoginPage extends StatelessWidget {
                 buttonVerticalPadding: 20,
                 buttonRadius: 50.0,
                 onPresssed: () {
-                  if (usernameController.text.toString() == "mbappe" &&
-                      passwordController.text.toString() == "admin") {
-                    Get.offNamed('/dashboard');
-                  } else {
-                    Get.snackbar(
-                        "WARNING", "Username or password is incorrect !",
-                        icon: Icon(Icons.warning));
-                  }
+                  loginController.login();
                 },
               ),
             )
