@@ -24,6 +24,7 @@ class ItemMovie extends StatelessWidget {
   final double ratingFontSize;
   final String rating;
   final double iconSize;
+  final IconData iconRating;
   final Color ratingIconColor;
   final String genre;
   final Color genreTextColor;
@@ -77,7 +78,7 @@ class ItemMovie extends StatelessWidget {
       required this.durationIcon,
       required this.duration,
       required this.spaceDuration,
-      required this.onTap});
+      required this.onTap, required this.iconRating});
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +118,7 @@ class ItemMovie extends StatelessWidget {
                           margin: EdgeInsets.only(top: marginRating),
                           child: Row(children: [
                             Icon(
-                              Icons.star,
+                              iconRating,
                               size: iconSize,
                               color: ratingIconColor,
                             ),

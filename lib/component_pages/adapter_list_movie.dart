@@ -48,6 +48,7 @@ class AdapterListMovie extends StatelessWidget {
       durationIcon: Icons.access_time,
       duration: modelMovie.duration,
       spaceDuration: 5.0,
+      iconRating: Icons.star,
       onTap: () {
         Get.toNamed('/movie-detail', arguments: modelMovie);
       },
