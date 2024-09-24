@@ -16,7 +16,7 @@ class UpcomingMenu extends StatelessWidget {
     List<ModelMovie> dataMovie = [
       ModelMovie(
           "High Forces",
-          "Cooming Soon",
+          "Coming Soon",
           "ACTION",
           "1h 55m",
           "images/highforces.jpg",
@@ -24,7 +24,7 @@ class UpcomingMenu extends StatelessWidget {
           ""),
       ModelMovie(
           "Joker: Folie à Deux",
-          "Cooming Soon",
+          "Coming Soon",
           "CRIMINAL",
           "2h 18m",
           "images/joker.jpg",
@@ -32,7 +32,7 @@ class UpcomingMenu extends StatelessWidget {
           ""),
       ModelMovie(
           "Laura",
-          "Cooming Soon",
+          "Coming Soon",
           "ROMANS",
           "1h 44m",
           "images/laura.jpg",
@@ -40,7 +40,7 @@ class UpcomingMenu extends StatelessWidget {
           ""),
       ModelMovie(
           "Megalopolis",
-          "Cooming Soon",
+          "Coming Soon",
           "ACTION",
           "2h 18m",
           "images/megalopolis.jpg",
@@ -48,7 +48,7 @@ class UpcomingMenu extends StatelessWidget {
           ""),
       ModelMovie(
           "Sumala",
-          "Cooming Soon",
+          "Coming Soon",
           "HORROR",
           "1h 53m",
           "images/sumala.jpg",
