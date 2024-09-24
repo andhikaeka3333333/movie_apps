@@ -14,7 +14,7 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     //connecting controller dengan ui
     final DashboardController dashboardController =
-        Get.put(DashboardController());
+        Get.find();
 
     final List<Widget> menus = [
       PopularMenu(),
