@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie_apps/bindings/bindings.dart';
 import 'package:movie_apps/pages/dashboard_page.dart';
 import 'package:movie_apps/pages/login_page.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/dashboard',
           page: () => DashboardPage(),
+          binding: MyBindings()
         ),
         GetPage(name: '/movie-detail', page: () => MovieDetailPage()),
       ],

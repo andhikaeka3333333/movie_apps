@@ -8,7 +8,7 @@ import '../../widgets/my_search_bar.dart';
 class PopularMenu extends StatelessWidget {
   PopularMenu({super.key});
 
-  final MovieController movieController = Get.put(MovieController());
+  final MovieController movieController = Get.find();
 
   @override
   Widget build(BuildContext context) {
