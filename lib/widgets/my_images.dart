@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyImages extends StatelessWidget {
   final double imageWidth;
-  final double imageHeight;
+  final double? imageHeight;
   final double imageRadius;
   final String image;
   final BoxFit imageFit;
@@ -10,7 +10,7 @@ class MyImages extends StatelessWidget {
   const MyImages(
       {super.key,
         required this.imageWidth,
-        required this.imageHeight,
+        this.imageHeight,
         required this.imageRadius,
         required this.image,
         required this.imageFit});

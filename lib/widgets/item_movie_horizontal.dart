@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_apps/widgets/my_images.dart';
 
 class ItemMovieHorizontal extends StatelessWidget {
   final String title;
@@ -75,11 +76,11 @@ class ItemMovieHorizontal extends StatelessWidget {
                   topLeft: Radius.circular(borderRadiusValue),
                   topRight: Radius.circular(borderRadiusValue),
                 ),
-                child: Image.asset(
-                  imagePath,
-                  width: imageWidth,
-                  fit: imageFit,
-                ),
+                child: MyImages(
+                    imageWidth: imageWidth,
+                    imageRadius: 0,
+                    image: imagePath,
+                    imageFit: imageFit),
               ),
             ),
             Padding(
