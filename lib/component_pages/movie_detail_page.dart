@@ -25,7 +25,7 @@ class MovieDetailPage extends StatelessWidget {
               MyImages(
                   imageWidth: 190,
                   imageHeight: 290,
-                  imageRadius: 20,
+                  imageRadius: BorderRadius.circular(20),
                   image: movie.image,
                   imageFit: BoxFit.cover),
               SizedBox(height: 20),

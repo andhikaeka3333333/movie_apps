@@ -86,88 +86,95 @@ class ItemMovie extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: EdgeInsets.all(containerMargin),
-        child: Container(
-            height: containerHeight,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(containerRadius),
-              color: containerColor,
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(padding),
+          child: Container(
+            padding: EdgeInsets.all(padding),
+              //height: containerHeight,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(containerRadius),
+                color: containerColor,
+              ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MyImages(
-                      imageWidth: imageWidth,
-                      imageHeight: imageHeight,
-                      imageRadius: imageRadius,
-                      image: image,
-                      imageFit: imageFit),
-                  Container(
-                    margin: EdgeInsets.only(top: marginTop, left: marginLeft),
-                    child: Column(
-                      crossAxisAlignment: crossAxisAlignment,
-                      children: [
-                        Text(
-                          title,
-                          style: TextStyle(
-                              fontSize: titleFontSize,
-                              fontWeight: titleFontWeight,
-                              fontFamily: font),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: marginRating),
-                          child: Row(children: [
-                            Icon(
-                              iconRating,
-                              size: iconSize,
-                              color: ratingIconColor,
-                            ),
-                            Text(
-                              rating,
-                              style: TextStyle(
-                                  fontSize: ratingFontSize,
-                                  color: Color(0xff9c9c9c),
-                                  fontFamily: font),
-                            )
-                          ]),
-                        ),
-                        MainButton(
-                          textButton: genre,
-                          textColor: genreTextColor,
-                          fontSize: genreFontSize,
-                          fontWeight: genreFontWeight,
-                          font: font,
-                          buttonBackgroundColor: genreBackgroundColor,
-                          buttonWidth: genreWidth,
-                          buttonHeight: genreHeight,
-                          buttonHorizontalPadding: genreHorizontalPadding,
-                          buttonVerticalPadding: genreVerticalPadding,
-                          buttonRadius: genreRadius,
-                          onPresssed: () {},
-                        ),
-                        Row(
+                    children: [
+                      MyImages(
+                          imageHeight: imageHeight,
+                          imageRadius: BorderRadius.only(
+                            topLeft: Radius.circular(imageRadius),
+                            topRight: Radius.circular(imageRadius)
+                          ),
+                          image: image,
+                          imageFit: imageFit),
+                      Container(
+                        margin: EdgeInsets.only(top: marginTop, left: marginLeft),
+                        child: Column(
+                          crossAxisAlignment: crossAxisAlignment,
                           children: [
-                            Icon(
-                              durationIcon,
-                              size: iconSize,
-                            ),
-                            SizedBox(
-                              width: spaceDuration,
-                            ),
                             Text(
-                              duration,
-                              style: TextStyle(fontFamily: font),
+                              title,
+                              style: TextStyle(
+                                  fontSize: titleFontSize,
+                                  fontWeight: titleFontWeight,
+                                  fontFamily: font),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: marginRating),
+                              child: Row(children: [
+                                Icon(
+                                  iconRating,
+                                  size: iconSize,
+                                  color: ratingIconColor,
+                                ),
+                                Text(
+                                  rating,
+                                  style: TextStyle(
+                                      fontSize: ratingFontSize,
+                                      color: Color(0xff9c9c9c),
+                                      fontFamily: font),
+                                )
+                              ]),
+                            ),
+                            MainButton(
+                              textButton: genre,
+                              textColor: genreTextColor,
+                              fontSize: genreFontSize,
+                              fontWeight: genreFontWeight,
+                              font: font,
+                              buttonBackgroundColor: genreBackgroundColor,
+                              buttonWidth: genreWidth,
+                              buttonHeight: genreHeight,
+                              buttonHorizontalPadding: genreHorizontalPadding,
+                              buttonVerticalPadding: genreVerticalPadding,
+                              buttonRadius: genreRadius,
+                              onPresssed: () {},
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      durationIcon,
+                                      size: iconSize,
+                                    ),
+                                    SizedBox(
+                                      width: spaceDuration,
+                                    ),
+                                    Text(
+                                      duration,
+                                      style: TextStyle(fontFamily: font),
+                                    )
+                                  ],
+                                ),
+
+                                IconButton(onPressed: (){}, icon: Icon(Icons.favorite),)
+                              ],
                             )
                           ],
-                        )
-                      ],
-                    ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
               ),
-            )),
-      ),
+        ),
     );
   }
 }

@@ -78,7 +78,7 @@ class ItemMovieHorizontal extends StatelessWidget {
                 ),
                 child: MyImages(
                     imageWidth: imageWidth,
-                    imageRadius: 0,
+                    imageRadius: BorderRadius.zero,
                     image: imagePath,
                     imageFit: imageFit),
               ),
