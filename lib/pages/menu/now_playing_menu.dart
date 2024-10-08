@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../component_pages/adapter_list_movie.dart';
 import '../../component_pages/adapter_list_movie_horizontal.dart';
 import '../../model/model_movie.dart';
@@ -19,7 +19,7 @@ class NowPlayingMenu extends StatelessWidget {
           "When an American family is invited to spend the weekend at the idyllic country estate of a charming British family they befriended on vacation, what begins as a dream holiday soon warps into a snarled psychological nightmare.",
           ""),
       ModelMovie(
-          "Harold And The Purple Crayon",
+          "Harold",
           "5.7/10 IMDb",
           "ADVENTURE",
           "1h 30m",
@@ -126,7 +126,7 @@ class NowPlayingMenu extends StatelessWidget {
               },
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.6,
+                childAspectRatio: (Get.width / 1000),
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 10.0,
               ),

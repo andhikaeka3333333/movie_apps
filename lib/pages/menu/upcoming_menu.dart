@@ -13,6 +13,7 @@ class UpcomingMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ...
     List<ModelMovie> dataMovie = [
       ModelMovie(
           "High Forces",
@@ -73,11 +74,11 @@ class UpcomingMenu extends StatelessWidget {
         },
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 0.6,
+          childAspectRatio: (Get.width / 1000),
           crossAxisSpacing: 10.0,
           mainAxisSpacing: 10.0,
         ),
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(5.0),
       ),
     );
   }

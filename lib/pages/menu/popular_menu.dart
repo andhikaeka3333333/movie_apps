@@ -42,19 +42,21 @@ class PopularMenu extends StatelessWidget {
       ),
       body: Obx(() {
         return GridView.builder(
+
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.6,
+            childAspectRatio: (Get.width / 1000),
             crossAxisSpacing: 10.0,
             mainAxisSpacing: 10.0,
+
           ),
           itemCount: movieController.filteredMovies.length,
           itemBuilder: (context, index) {
             return AdapterListMovie(
-              modelMovie: movieController.filteredMovies[index],
-            );
+                modelMovie: movieController.filteredMovies[index],
+              );
           },
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(5.0),
         );
       }),
     );
