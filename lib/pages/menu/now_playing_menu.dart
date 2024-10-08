@@ -119,11 +119,17 @@ class NowPlayingMenu extends StatelessWidget {
                 ),
               )),
           Expanded(
-            child: ListView.builder(
+            child: GridView.builder(
               itemCount: dataMovie.length,
               itemBuilder: (context, index) {
                 return AdapterListMovie(modelMovie: dataMovie[index]);
               },
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.6,
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 10.0,
+              ),
             ),
           ),
         ],
