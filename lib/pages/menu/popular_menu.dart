@@ -41,13 +41,20 @@ class PopularMenu extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       body: Obx(() {
-        return ListView.builder(
+        return GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.6,
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 10.0,
+          ),
           itemCount: movieController.filteredMovies.length,
           itemBuilder: (context, index) {
             return AdapterListMovie(
               modelMovie: movieController.filteredMovies[index],
             );
           },
+          padding: const EdgeInsets.all(10.0),
         );
       }),
     );

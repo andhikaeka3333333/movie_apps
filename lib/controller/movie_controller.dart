@@ -5,7 +5,7 @@ import '../model/model_movie.dart';
 class MovieController extends GetxController {
   final dataMovie = <ModelMovie>[
     ModelMovie(
-        "Deadpool Wolverine",
+        "Deadpool",
         "8.0/10 IMDb",
         "ACTION",
         "2h 8m",

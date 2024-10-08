@@ -66,11 +66,18 @@ class UpcomingMenu extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
-      body: ListView.builder(
+      body: GridView.builder(
         itemCount: dataMovie.length,
         itemBuilder: (context, index) {
           return AdapterListMovie(modelMovie: dataMovie[index]);
         },
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 0.6,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
+        ),
+        padding: const EdgeInsets.all(10.0),
       ),
     );
   }

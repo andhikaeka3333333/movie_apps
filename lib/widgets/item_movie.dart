@@ -94,7 +94,8 @@ class ItemMovie extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.all(padding),
-              child: Row(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MyImages(
                       imageWidth: imageWidth,
