@@ -14,7 +14,6 @@ class AdapterListMovie extends StatelessWidget {
   Widget build(BuildContext context) {
     return ItemMovie(
       containerMargin: 15.0,
-      containerHeight: 900.0,
       containerColor: containerColor,
       containerRadius: 15.0,
       padding: 0.0,

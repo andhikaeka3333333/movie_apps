@@ -78,7 +78,7 @@ class UpcomingMenu extends StatelessWidget {
           crossAxisSpacing: 10.0,
           mainAxisSpacing: 10.0,
         ),
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(10.0),
       ),
     );
   }
