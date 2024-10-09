@@ -4,7 +4,6 @@ import 'package:movie_apps/widgets/my_images.dart';
 
 class ItemMovie extends StatelessWidget {
   final double containerMargin;
-  final double containerHeight;
   final Color containerColor;
   final double containerRadius;
   final double padding;
@@ -44,7 +43,6 @@ class ItemMovie extends StatelessWidget {
   const ItemMovie(
       {super.key,
       required this.containerMargin,
-      required this.containerHeight,
       required this.containerColor,
       required this.containerRadius,
       required this.padding,
