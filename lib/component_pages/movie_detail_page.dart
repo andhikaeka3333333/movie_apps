@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../controller/favorite_controller.dart';
 import '../model/model_movie.dart';
 import '../widgets/colors.dart';
 import '../widgets/main_button.dart';
@@ -9,6 +10,7 @@ class MovieDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ModelMovie movie = Get.arguments as ModelMovie;
+    final FavoriteController favoriteController = Get.find();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -29,19 +31,37 @@ class MovieDetailPage extends StatelessWidget {
                   image: movie.image,
                   imageFit: BoxFit.cover),
               SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    movie.title,
+                    style: TextStyle(
+                      fontFamily: 'Mulish',
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: blackColor,
+                    ),
+                  ),
+                  IconButton(
+                      color: favoriteColor,
+                      onPressed: () {
+                        ModelMovie favoriteMovie = ModelMovie(
+                          title: movie.title,
+                          rating: movie.rating,
+                          genre: movie.genre,
+                          duration: movie.duration,
+                          image: movie.image,
+                          description: movie.description,
+                          imageHorizontal: movie.imageHorizontal,
+                        );
 
-              // Judul Film
-              Text(
-                movie.title,
-                style: TextStyle(
-                  fontFamily: 'Mulish',
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: blackColor,
-                ),
+                        favoriteController.addFavorite(favoriteMovie);
+                      },
+                      icon: Icon(Icons.favorite))
+                ],
               ),
               SizedBox(height: 8),
-
               Row(
                 children: [
                   Icon(Icons.star, color: primaryColor, size: 18),
@@ -54,7 +74,6 @@ class MovieDetailPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-
               MainButton(
                   textButton: movie.genre,
                   textColor: buttonTextColor,
@@ -82,7 +101,6 @@ class MovieDetailPage extends StatelessWidget {
                     fontSize: 14, color: blackColor, fontFamily: 'Mulish'),
               ),
               SizedBox(height: 20),
-
               Text(
                 'Description',
                 style: TextStyle(
