@@ -4,7 +4,7 @@ import '../controller/dashboard_controller.dart';
 import '../widgets/colors.dart';
 import 'menu/popular_menu.dart';
 import 'menu/profile_menu.dart';
-import 'menu/upcoming_menu.dart';
+import 'menu/favorite_menu.dart';
 import 'menu/now_playing_menu.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class DashboardPage extends StatelessWidget {
     final List<Widget> menus = [
       PopularMenu(),
       NowPlayingMenu(),
-      UpcomingMenu(),
+      FavoritePage(),
       ProfileMenu()
     ];
 
@@ -42,8 +42,8 @@ class DashboardPage extends StatelessWidget {
                 label: "Now Playing",
                 backgroundColor: whiteColor),
             BottomNavigationBarItem(
-                icon: Icon(Icons.date_range_rounded),
-                label: "Upcoming",
+                icon: Icon(Icons.favorite),
+                label: "Favorite",
                 backgroundColor: whiteColor),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle),

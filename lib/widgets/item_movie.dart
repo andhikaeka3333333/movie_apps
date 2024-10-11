@@ -38,7 +38,10 @@ class ItemMovie extends StatelessWidget {
   final IconData durationIcon;
   final String duration;
   final double spaceDuration;
+  final IconData iconAction;
+  final Color iconActionColor;
   final void Function() onTap;
+  final void Function() onPressed;
 
   const ItemMovie(
       {super.key,
@@ -76,7 +79,9 @@ class ItemMovie extends StatelessWidget {
       required this.durationIcon,
       required this.duration,
       required this.spaceDuration,
-      required this.onTap, required this.iconRating});
+      required this.onTap,
+      required this.iconRating,
+      required this.onPressed, required this.iconAction, required this.iconActionColor});
 
   @override
   Widget build(BuildContext context) {
@@ -84,95 +89,99 @@ class ItemMovie extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: EdgeInsets.all(containerMargin),
-          child: Container(
-            padding: EdgeInsets.all(padding),
-              //height: containerHeight,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(containerRadius),
-                color: containerColor,
-              ),
-              child: Column(
-                    children: [
-                      MyImages(
-                          imageHeight: imageHeight,
-                          imageRadius: BorderRadius.only(
-                            topLeft: Radius.circular(imageRadius),
-                            topRight: Radius.circular(imageRadius)
-                          ),
-                          image: image,
-                          imageFit: imageFit),
-                      Container(
-                        margin: EdgeInsets.only(top: marginTop, left: marginLeft),
-                        child: Column(
-                          crossAxisAlignment: crossAxisAlignment,
+        child: Container(
+          padding: EdgeInsets.all(padding),
+          //height: containerHeight,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(containerRadius),
+            color: containerColor,
+          ),
+          child: Column(
+            children: [
+              MyImages(
+                  imageHeight: imageHeight,
+                  imageRadius: BorderRadius.only(
+                      topLeft: Radius.circular(imageRadius),
+                      topRight: Radius.circular(imageRadius)),
+                  image: image,
+                  imageFit: imageFit),
+              Container(
+                margin: EdgeInsets.only(top: marginTop, left: marginLeft),
+                child: Column(
+                  crossAxisAlignment: crossAxisAlignment,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                          fontSize: titleFontSize,
+                          fontWeight: titleFontWeight,
+                          fontFamily: font),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: marginRating),
+                      child: Row(children: [
+                        Icon(
+                          iconRating,
+                          size: iconSize,
+                          color: ratingIconColor,
+                        ),
+                        Text(
+                          rating,
+                          style: TextStyle(
+                              fontSize: ratingFontSize,
+                              color: Color(0xff9c9c9c),
+                              fontFamily: font),
+                        )
+                      ]),
+                    ),
+                    MainButton(
+                      textButton: genre,
+                      textColor: genreTextColor,
+                      fontSize: genreFontSize,
+                      fontWeight: genreFontWeight,
+                      font: font,
+                      buttonBackgroundColor: genreBackgroundColor,
+                      buttonWidth: genreWidth,
+                      buttonHeight: genreHeight,
+                      buttonHorizontalPadding: genreHorizontalPadding,
+                      buttonVerticalPadding: genreVerticalPadding,
+                      buttonRadius: genreRadius,
+                      onPresssed: () {},
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
                           children: [
+                            Icon(
+                              durationIcon,
+                              size: iconSize,
+                            ),
+                            SizedBox(
+                              width: spaceDuration,
+                            ),
                             Text(
-                              title,
-                              style: TextStyle(
-                                  fontSize: titleFontSize,
-                                  fontWeight: titleFontWeight,
-                                  fontFamily: font),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(top: marginRating),
-                              child: Row(children: [
-                                Icon(
-                                  iconRating,
-                                  size: iconSize,
-                                  color: ratingIconColor,
-                                ),
-                                Text(
-                                  rating,
-                                  style: TextStyle(
-                                      fontSize: ratingFontSize,
-                                      color: Color(0xff9c9c9c),
-                                      fontFamily: font),
-                                )
-                              ]),
-                            ),
-                            MainButton(
-                              textButton: genre,
-                              textColor: genreTextColor,
-                              fontSize: genreFontSize,
-                              fontWeight: genreFontWeight,
-                              font: font,
-                              buttonBackgroundColor: genreBackgroundColor,
-                              buttonWidth: genreWidth,
-                              buttonHeight: genreHeight,
-                              buttonHorizontalPadding: genreHorizontalPadding,
-                              buttonVerticalPadding: genreVerticalPadding,
-                              buttonRadius: genreRadius,
-                              onPresssed: () {},
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(
-                                      durationIcon,
-                                      size: iconSize,
-                                    ),
-                                    SizedBox(
-                                      width: spaceDuration,
-                                    ),
-                                    Text(
-                                      duration,
-                                      style: TextStyle(fontFamily: font),
-                                    )
-                                  ],
-                                ),
-
-                                IconButton(onPressed: (){}, icon: Icon(Icons.favorite),)
-                              ],
+                              duration,
+                              style: TextStyle(fontFamily: font),
                             )
                           ],
                         ),
-                      ),
-                    ],
-                  ),
+                        IconButton(
+                          onPressed: () {
+                            onPressed();
+                          },
+                          icon: Icon(iconAction),
+                          color: iconActionColor,
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
+            ],
+          ),
         ),
+      ),
     );
   }
 }

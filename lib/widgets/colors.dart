@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+final Color favoriteColor = Color(0xfff83c3c);
 final Color primaryColor = Color(0xffffc319);
 final Color secondaryColor = Color(0xff9c9c9c);
 final Color containerColor = Color(0xfff6f4f0);

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,11 +7,11 @@ import '../model/model_movie.dart';
 import '../widgets/colors.dart';
 import '../widgets/item_movie.dart';
 
-class AdapterListMovie extends StatelessWidget {
+class AdapterFavorite extends StatelessWidget {
   final FavoriteController favoriteController = Get.find();
   final ModelMovie modelMovie;
 
-  AdapterListMovie({super.key, required this.modelMovie});
+  AdapterFavorite({super.key, required this.modelMovie});
 
   @override
   Widget build(BuildContext context) {
@@ -50,23 +51,29 @@ class AdapterListMovie extends StatelessWidget {
       duration: modelMovie.duration,
       spaceDuration: 5.0,
       iconRating: Icons.star,
-      iconAction: Icons.favorite,
+      iconAction: CupertinoIcons.trash,
       onTap: () {
         Get.toNamed('/movie-detail', arguments: modelMovie);
       },
       onPressed: () {
-        ModelMovie favoriteMovie = ModelMovie(
-          title: modelMovie.title,
-          rating: modelMovie.rating,
-          genre: modelMovie.genre,
-          duration: modelMovie.duration,
-          image: modelMovie.image,
-          description: modelMovie.description,
-          imageHorizontal: modelMovie.imageHorizontal,
+        Get.defaultDialog(
+          title: 'Konfirmasi',
+          middleText:
+              'Apakah kamu yakin untuk menghapus film ini dari daftar favorite?',
+          onCancel: () {
+            Get.back();
+          },
+          onConfirm: () {
+            favoriteController.removeFavorite(modelMovie.id!);
+            Get.back();
+          },
+          confirmTextColor: Colors.white,
+          textCancel: 'Batal',
+          textConfirm: 'Hapus',
+          buttonColor: primaryColor,
         );
-
-        favoriteController.addFavorite(favoriteMovie);
-      }, iconActionColor: favoriteColor,
+      },
+      iconActionColor: secondaryColor,
     );
   }
 }
